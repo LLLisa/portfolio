@@ -5,7 +5,9 @@
   "scripts": {
     "build": "webpack ./ts/src",
     "build:dev": "npm run build -- --watch --mode=development",
-    "start": "ts-node build/server/index.js",
+    "deploy": "git add . && git commit -m Heroku && git push heroku main",
+    "postinstall": "tsc",
+    "start": "node build/server/index.js",
     "start:dev": "npm run build:dev & nodemon ts/server/index.ts"
   },
   "keywords": [],
