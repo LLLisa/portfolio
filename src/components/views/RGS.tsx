@@ -2,7 +2,7 @@ import React from 'react';
 
 export default () => {
   return (
-    <main>
+    <section>
       <p>
         Suspendisse interdum consectetur libero id. Pulvinar pellentesque habitant morbi tristique
         senectus et netus et. Rhoncus mattis rhoncus urna neque. In hac habitasse platea dictumst
@@ -10,8 +10,8 @@ export default () => {
         nunc. Ac odio tempor orci dapibus ultrices in iaculis nunc sed. Arcu non odio euismod
         lacinia at quis risus sed. Quis imperdiet massa tincidunt nunc pulvinar sapien et. Sed enim
         ut sem viverra aliquet. Nunc lobortis mattis aliquam faucibus purus in. Posuere ac ut
-        consequat semper viverra nam libero justo laoreet.{' '}
+        consequat semper viverra nam libero justo laoreet.
       </p>
-    </main>
+    </section>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default () => {
   return (
-    <main>
+    <section>
       Eleifend donec pretium vulputate sapien nec sagittis. Posuere urna nec tincidunt praesent.
       Consectetur purus ut faucibus pulvinar elementum. Eros in cursus turpis massa tincidunt dui.
       Blandit massa enim nec dui nunc mattis enim ut. Porttitor lacus luctus accumsan tortor
@@ -13,6 +13,6 @@ export default () => {
       elit pellentesque habitant morbi. Vitae elementum curabitur vitae nunc sed velit. Donec et
       odio pellentesque diam volutpat commodo sed egestas. Placerat orci nulla pellentesque
       dignissim. A diam sollicitudin tempor id eu. Ut tortor pretium viverra suspendisse.
-    </main>
+    </section>
   );
 };

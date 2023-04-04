@@ -1,13 +1,14 @@
 import React from 'react';
 import { createBrowserRouter } from 'react-router-dom';
-import { Root, Main, Inventory, RGS } from '../components';
+import { Root, About, Inventory, RGS, Main } from '../components';
 
 export default createBrowserRouter([
   {
     path: '/',
     element: <Root />,
     children: [
-      { path: '/', element: <Main /> },
+      // { path: '/:page', element: <Main /> },
+      { path: '/about', element: <About /> },
       {
         path: '/inventory',
         element: <Inventory />,

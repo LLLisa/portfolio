@@ -1,12 +1,11 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
-import { Header, Footer } from '.';
+import { Header, Main, Footer } from '.';
 
 export default () => {
   return (
     <>
       <Header />
-      <Outlet />
+      <Main />
       <Footer />
     </>
   );
