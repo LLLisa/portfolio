@@ -10,7 +10,7 @@ app.use('/dist', express.static(path.join(__dirname, '../../dist')));
 
 app.use('/example', exampleRouter);
 
-app.get('/', (req, res, next) => {
+app.use('/', (req, res, next) => {
   try {
     res.sendFile(path.join(__dirname, '../../public/index.html'));
   } catch (error) {
