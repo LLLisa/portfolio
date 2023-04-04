@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "webpack ./ts/src",
+    "build": "webpack /src",
     "build:dev": "npm run build -- --watch --mode=development",
-    "deploy": "tsc && git add . && git commit -m Heroku && git push heroku main",
-    "start": "node ts/server/index.js",
-    "start:dev": "npm run build:dev & nodemon ts/server/index.ts"
+    "deploy": "git add . && git commit -m Heroku && git push heroku main",
+    "start": "node server/index.js",
+    "start:dev": "npm run build:dev & nodemon server/index.ts"
   },
   "keywords": [],
   "author": "",
