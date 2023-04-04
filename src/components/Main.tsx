@@ -1,11 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { Outlet, Link, useParams } from 'react-router-dom';
-import { routeSelector, routesArray, navSelectionType } from '../utils';
+import React from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { About, Inventory, RGS } from './views';
+import { routeSelector, navSelectionType } from '../utils';
 
 export default () => {
-  // const { page } = useParams();
+  const page = useParams().page as string;
 
-  // console.log(page);
+  const pageRouter = (selector: string) => {
+    switch (selector) {
+      case 'inventory':
+        return <Inventory />;
+      case 'rgs':
+        return <RGS />;
+      default:
+        return <About />;
+    }
+  };
   const currentPath = window.location.pathname;
 
   const handleNav = (direction: navSelectionType) => {
@@ -15,7 +25,7 @@ export default () => {
   return (
     <main>
       <Link to={handleNav(-1)}>back</Link>
-      <Outlet />
+      {pageRouter(page)}
       <Link to={handleNav(1)}>forward</Link>
     </main>
   );
