@@ -3,7 +3,6 @@ import { Link, useParams } from 'react-router-dom';
 import { About, Inventory, RGS } from './views';
 import { routeSelector, navSelectionType } from '../utils';
 
-
 export default () => {
   const page = useParams().page as string;
 
@@ -25,12 +24,13 @@ export default () => {
 
   return (
     <main>
-      <Link className='directionalNav' to={handleNav(-1)}>&lt;</Link>
-      <article>
-
-      {pageRouter(page)}
-      </article>
-      <Link className='directionalNav' to={handleNav(1)}>&gt;</Link>
+      <Link className="directionalNav" to={handleNav(-1)}>
+        &lt;
+      </Link>
+      <article>{pageRouter(page)}</article>
+      <Link className="directionalNav" to={handleNav(1)}>
+        &gt;
+      </Link>
     </main>
   );
 };

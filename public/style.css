@@ -9,6 +9,15 @@ body {
   height: calc(100vh - 1rem);
 }
 
+header{
+  display: flex;
+  justify-content: space-between;
+}
+
+nav > a {
+margin: 1rem;
+}
+
 main {
   margin: auto 2rem;
   padding: 0 1rem;
