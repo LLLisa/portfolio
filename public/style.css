@@ -3,7 +3,17 @@ body {
 }
 
 main {
-  border: 2px dashed red;
+  /* border: 2px dashed red; */
   margin: auto 2rem;
   padding: 0 1rem;
+  display: flex
+}
+
+.directionalNav{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 4rem;
+  transform: scaleX(0.5);
 }
