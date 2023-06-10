@@ -24,11 +24,11 @@ export default () => {
 
   return (
     <main>
-      <Link className="directionalNav" to={handleNav(-1)}>
+      <Link className="directionalNav navLeft" to={handleNav(-1)}>
         &lt;
       </Link>
       <article>{pageRouter(page)}</article>
-      <Link className="directionalNav" to={handleNav(1)}>
+      <Link className="directionalNav navRight" to={handleNav(1)}>
         &gt;
       </Link>
     </main>
