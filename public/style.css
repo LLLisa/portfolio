@@ -2,11 +2,23 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+#rootContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 1rem);
+}
+
 main {
-  /* border: 2px dashed red; */
   margin: auto 2rem;
   padding: 0 1rem;
-  display: flex
+  display: flex;
+  height: 100%;
+}
+
+article{
+  display: flex;
+  align-items: center;
 }
 
 .directionalNav{
