@@ -4,9 +4,8 @@ import { Link, useParams } from 'react-router-dom';
 export default () => {
   const page = useParams().page as string;
 
-  const getWhichSelected = (thisLink: string): string => {
-    // console.log(thisLink, page);
-    if (thisLink === page) return 'currentPageLink';
+  const getWhichSelected = (linkName: string): string => {
+    if (linkName === page) return 'currentPageLink';
     return '';
   };
 
@@ -14,13 +13,13 @@ export default () => {
     <header>
       <h1>Header</h1>
       <nav>
-        <Link to="/" className={getWhichSelected('about')}>
+        <Link to="/about" id={getWhichSelected('about')}>
           about
         </Link>
-        <Link to="/inventory" className={getWhichSelected('inventory')}>
+        <Link to="/inventory" id={getWhichSelected('inventory')}>
           inventory
         </Link>
-        <Link to="/rgs" className={getWhichSelected('rgs')}>
+        <Link to="/rgs" id={getWhichSelected('rgs')}>
           rgs
         </Link>
       </nav>

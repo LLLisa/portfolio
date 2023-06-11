@@ -1,6 +1,6 @@
 export const routesArray: string[] = ['/about', '/inventory', '/rgs'];
 
-export type navSelectionType = -1 | 1;
+type navSelectionType = -1 | 1;
 
 export default (current: string, selection: navSelectionType): string => {
   const currentIndex = routesArray.indexOf(current);
