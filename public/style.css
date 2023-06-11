@@ -20,7 +20,7 @@ nav > a {
 }
 
 #currentPageLink {
-  border: 2px solid blue;
+  background-color: lightgray;
 }
 
 main {

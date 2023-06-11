@@ -1,4 +1,4 @@
-export const routesArray: string[] = ['/about', '/inventory', '/rgs'];
+const routesArray: string[] = ['/about', '/inventory', '/rgs'];
 
 type navSelectionType = -1 | 1;
 
