@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { routesArray } from '../utils';
 
 export default () => {
   const page = useParams().page as string;
@@ -13,15 +14,13 @@ export default () => {
     <header>
       <h1>Header</h1>
       <nav>
-        <Link to="/about" id={getWhichSelected('about')}>
-          about
-        </Link>
-        <Link to="/inventory" id={getWhichSelected('inventory')}>
-          inventory
-        </Link>
-        <Link to="/rgs" id={getWhichSelected('rgs')}>
-          rgs
-        </Link>
+        {routesArray.map((route) => {
+          return (
+            <Link key={route} to={route} id={getWhichSelected(route.slice(1))}>
+              {route.slice(1)}
+            </Link>
+          );
+        })}
       </nav>
     </header>
   );
