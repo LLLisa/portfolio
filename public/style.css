@@ -2,8 +2,59 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+#rootContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100vh - 1rem);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav > a {
+  margin: 1rem;
+  text-decoration: none;
+}
+
+.currentPageLink {
+  border: 2px solid blue;
+}
+
 main {
-  border: 2px dashed red;
   margin: auto 2rem;
   padding: 0 1rem;
+  display: flex;
+  height: 100%;
+}
+
+article {
+  display: flex;
+  align-items: center;
+}
+
+.directionalNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 4rem;
+  transform: scaleX(0.5);
+  transition: 0.2s;
+  min-width: 4rem;
+}
+
+.navLeft {
+  border-radius: 10px 0 0 10px;
+}
+
+.navRight {
+  border-radius: 0 10px 10px 0;
+}
+
+.directionalNav:hover {
+  background-color: lightgray;
 }

@@ -16,17 +16,20 @@ export default () => {
         return <About />;
     }
   };
-  const currentPath = window.location.pathname;
 
   const handleNav = (direction: navSelectionType) => {
-    return routeSelector(currentPath, direction);
+    return routeSelector('/' + page, direction);
   };
 
   return (
     <main>
-      <Link to={handleNav(-1)}>back</Link>
-      {pageRouter(page)}
-      <Link to={handleNav(1)}>forward</Link>
+      <Link className="directionalNav navLeft" to={handleNav(-1)}>
+        &lt;
+      </Link>
+      <article>{pageRouter(page)}</article>
+      <Link className="directionalNav navRight" to={handleNav(1)}>
+        &gt;
+      </Link>
     </main>
   );
 };
