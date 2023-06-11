@@ -16,10 +16,9 @@ export default () => {
         return <About />;
     }
   };
-  const currentPath = window.location.pathname;
 
   const handleNav = (direction: navSelectionType) => {
-    return routeSelector(currentPath, direction);
+    return routeSelector('/' + page, direction);
   };
 
   return (

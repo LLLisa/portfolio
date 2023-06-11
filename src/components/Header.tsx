@@ -1,7 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 export default () => {
+  const page = useParams().page as string;
+
+  console.log(page);
+
   return (
     <header>
       <h1>Header</h1>
