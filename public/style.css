@@ -16,6 +16,11 @@ header {
 
 nav > a {
   margin: 1rem;
+  text-decoration: none;
+}
+
+.currentPageLink {
+  border: 2px solid blue;
 }
 
 main {
