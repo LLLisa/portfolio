@@ -6,7 +6,7 @@
         "build": "tsc && webpack ./src",
         "build:dev": "webpack ./src -- --watch --mode=development",
         "deploy": "git add . && git commit -m Heroku && git push heroku main",
-        "start": "ts-node server/index.ts",
+        "start": "node server/index.ts",
         "start:dev": "npm run build:dev & nodemon server/index.ts"
     },
     "keywords": [],
