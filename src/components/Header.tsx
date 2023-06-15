@@ -16,8 +16,8 @@ export default () => {
             <nav>
                 {routesArray.map((route) => {
                     return (
-                        <Link key={route} to={route} id={getWhichSelected(route.slice(1))}>
-                            {route.slice(1)}
+                        <Link key={route} to={'/' + route} id={getWhichSelected(route)}>
+                            {route}
                         </Link>
                     );
                 })}

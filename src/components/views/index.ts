@@ -1,3 +1,5 @@
-export { default as About } from './About';
-export { default as Inventory } from './Inventory';
-export { default as RGS } from './RGS';
+export { default as about } from './about';
+export { default as inventory } from './inventory';
+export { default as rgs } from './rgs';
+export { default as generatePage } from './generatePage';
+export * from './generatePage';
