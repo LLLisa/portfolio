@@ -5,7 +5,7 @@ export default () => {
     return (
         <div id='rootContainer'>
             <Header />
-            {/* <Main /> */}
+            <Main />
             <Footer />
         </div>
     );
