@@ -8,8 +8,6 @@ export type TPageData = {
 export default (pageData: TPageData) => {
     const { heading, content } = pageData;
 
-    // return 'pagegen';
-
     return (
         <section>
             {heading && <h2>{heading}</h2>}
