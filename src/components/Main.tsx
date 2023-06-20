@@ -12,6 +12,9 @@ export default () => {
         rgs: rgs,
     };
 
+    {
+        console.log(pageConst[page]);
+    }
     return (
         <main>
             <Link className='directionalNav navLeft' to={'/' + routeSelector(page, -1)}>
