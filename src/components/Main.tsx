@@ -4,7 +4,7 @@ import { routeSelector } from '../utils';
 import { generatePage, TPageData, about, inventory, rgs } from './views';
 
 export default () => {
-    const page = useParams().page as string;
+    const page = useParams().page as PageKey;
 
     type PageKey = 'about' | 'inventory' | 'rgs';
 
@@ -14,16 +14,12 @@ export default () => {
         rgs: rgs,
     };
 
-    {
-        console.log(pageConst[page as PageKey]);
-    }
     return (
         <main>
-            <Link className='directionalNav navLeft' to={'/' + routeSelector(page, -1)}>
+            <Link className='directionalNav navLeft' to={routeSelector(page, -1)}>
                 &lt;
             </Link>
-            {/* <article>{generatePage(about)}</article> */}
-            <article>{generatePage(pageConst[page as PageKey])}</article>
+            <article>{generatePage(pageConst[page])}</article>
             <Link className='directionalNav navRight' to={routeSelector(page, 1)}>
                 &gt;
             </Link>
