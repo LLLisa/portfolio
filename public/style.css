@@ -30,6 +30,11 @@ main {
     height: 70%;
 }
 
+#mainContentSection {
+    display: flex;
+    align-items: center;
+}
+
 article {
     display: flex;
     align-items: center;
