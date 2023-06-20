@@ -20,8 +20,8 @@ export default () => {
             <Link className='directionalNav navLeft' to={'/' + routeSelector(page, -1)}>
                 &lt;
             </Link>
-            {/* <article>{generatePage(about)}</article> */}
-            <article>{generatePage(pageConst[page])}</article>
+            <article>{generatePage(about)}</article>
+            {/* <article>{generatePage(pageConst[page])}</article> */}
             <Link className='directionalNav navRight' to={routeSelector(page, 1)}>
                 &gt;
             </Link>
