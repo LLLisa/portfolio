@@ -6,11 +6,11 @@ import { generatePage, TPageData, about, inventory, rgs } from './views';
 export default () => {
     const page = useParams().page as string;
 
-    // const pageConst: Record<string, TPageData> = {
-    //     about: about,
-    //     inventory: inventory,
-    //     rgs: rgs,
-    // };
+    const pageConst: Record<string, TPageData> = {
+        about: about,
+        inventory: inventory,
+        rgs: rgs,
+    };
 
     return (
         <main>
