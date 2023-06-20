@@ -1,10 +1,11 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, Navigate, useParams } from 'react-router-dom';
 import { routeSelector } from '../utils';
 import { generatePage, TPageData, about, inventory, rgs } from './views';
 
 export default () => {
     const page = useParams().page as PageKey;
+    if (!page) return <Navigate to='about' />;
 
     type PageKey = 'about' | 'inventory' | 'rgs';
 
