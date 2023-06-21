@@ -22,26 +22,36 @@ export default () => {
 
     return (
         <main>
-            <Link className='directionalNav navLeft' to={routeSelector(page, -1)} onClick={() => setDirection('left')}>
+            <Link
+                className='directionalNav navLeft'
+                to={routeSelector(page, -1)}
+                onClick={() => setDirection('left')}
+                onMouseDown={(ev) => ev.preventDefault()}
+            >
                 &lt;
             </Link>
             {transition((state, stage) => (
                 <section
                     id='mainContentSection'
                     style={{
-                        transition: '50ms',
+                        transition: '100ms',
                         opacity: stage === 'enter' ? 1 : 0,
                         transform: {
-                            from: `translateX(${direction === 'left' ? '10' : '-10'}%)`,
+                            from: `translateX(${direction === 'left' ? '5' : '-5'}%)`,
                             enter: 'translateX(0%)',
-                            leave: `translateX(${direction === 'right' ? '12' : '-12'}%)`,
+                            leave: `translateX(${direction === 'right' ? '5' : '-5'}%)`,
                         }[stage],
                     }}
                 >
                     <article>{generatePage(pageConst[state])}</article>
                 </section>
             ))}
-            <Link className='directionalNav navRight' to={routeSelector(page, 1)} onClick={() => setDirection('right')}>
+            <Link
+                className='directionalNav navRight'
+                to={routeSelector(page, 1)}
+                onClick={() => setDirection('right')}
+                onMouseDown={(ev) => ev.preventDefault()}
+            >
                 &gt;
             </Link>
         </main>
