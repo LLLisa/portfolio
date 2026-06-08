@@ -37,7 +37,7 @@ export type Experience = {
 export const experience: Experience[] = [
     {
         company: 'Fly Over The City',
-        role: 'Senior Developer (Contract)',
+        role: 'Senior Developer',
         period: 'Oct 2025 — Present',
         current: true,
         points: [
@@ -50,8 +50,7 @@ export const experience: Experience[] = [
     {
         company: 'Curii Corporation',
         role: 'Front-End Developer',
-        period: 'Sep 2022 — Present',
-        current: true,
+        period: 'Sep 2022 — Mar 2026',
         points: [
             'Cut front-end load times by 62% (6.5s → 2.5s) through targeted performance optimization.',
             'Consolidated a fractured test suite from 3 libraries down to 1 across 50+ test files.',
