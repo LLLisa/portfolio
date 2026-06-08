@@ -6,7 +6,7 @@
         "dev": "vite",
         "build": "vite build",
         "preview": "vite preview",
-        "start": "ts-node --project server/tsconfig.json server/index.ts",
+        "start": "ts-node --transpile-only --project server/tsconfig.json server/index.ts",
         "start:dev": "npm run build && npm start",
         "heroku-postbuild": "npm run build",
         "deploy": "git add . && git commit -m Heroku && git push && git push heroku main"
