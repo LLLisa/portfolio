@@ -1,0 +1,209 @@
+.hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 7rem var(--pad) 5rem;
+    overflow: hidden;
+}
+
+.grid {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(var(--line-soft) 1px, transparent 1px),
+        linear-gradient(90deg, var(--line-soft) 1px, transparent 1px);
+    background-size: 64px 64px;
+    mask-image: radial-gradient(circle at 30% 40%, #000 0%, transparent 70%);
+    -webkit-mask-image: radial-gradient(circle at 30% 40%, #000 0%, transparent 70%);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+.status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    color: var(--fg-dim);
+    padding: 0.4rem 0.85rem;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 0 rgba(198, 242, 78, 0.6);
+    animation: pulse 2.4s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(198, 242, 78, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 9px rgba(198, 242, 78, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(198, 242, 78, 0);
+    }
+}
+
+.name {
+    margin-top: 1.6rem;
+    font-size: clamp(3.4rem, 13vw, 9.5rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    line-height: 0.92;
+}
+
+.outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--fg-mut);
+    background: linear-gradient(120deg, var(--accent), var(--accent-3));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.roleRow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: 1.6rem;
+    font-family: var(--font-mono);
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: var(--fg-dim);
+}
+
+.role {
+    color: var(--accent);
+}
+
+.sep {
+    color: var(--fg-mut);
+}
+
+.tagline {
+    margin-top: 1.8rem;
+    max-width: 44ch;
+    font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+    line-height: 1.5;
+    color: var(--fg-dim);
+}
+
+.actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 2.4rem;
+}
+
+.primary,
+.ghost {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.95rem 1.7rem;
+    border-radius: 999px;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.primary {
+    background: var(--accent);
+    color: #0a0a0a;
+}
+
+.primary:hover {
+    transform: translateY(-2px);
+    background: #d6ff6e;
+}
+
+.ghost {
+    border: 1px solid var(--line);
+    color: var(--fg);
+}
+
+.ghost:hover {
+    transform: translateY(-2px);
+    border-color: var(--fg-mut);
+}
+
+.socials {
+    display: flex;
+    gap: 1.6rem;
+    margin-top: 2.4rem;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--fg-mut);
+}
+
+.socials a {
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.socials a:hover {
+    color: var(--accent);
+}
+
+.scroll {
+    position: absolute;
+    left: var(--pad);
+    bottom: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--fg-mut);
+}
+
+.scrollLine {
+    width: 3rem;
+    height: 1px;
+    background: linear-gradient(90deg, var(--fg-mut), transparent);
+    position: relative;
+    overflow: hidden;
+}
+
+.scrollLine::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    width: 40%;
+    background: var(--accent);
+    animation: slide 2.2s infinite;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(300%);
+    }
+}
+
+@media (max-width: 520px) {
+    .scroll {
+        display: none;
+    }
+}

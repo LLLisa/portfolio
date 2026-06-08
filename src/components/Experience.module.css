@@ -1,0 +1,109 @@
+.list {
+    list-style: none;
+    padding: 0;
+    margin: clamp(2.5rem, 6vw, 4rem) 0 0;
+}
+
+.item {
+    position: relative;
+    padding: clamp(1.6rem, 3vw, 2.2rem) 0;
+    border-top: 1px solid var(--line-soft);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    transition: padding-left 0.3s ease;
+}
+
+.item:last-child {
+    border-bottom: 1px solid var(--line-soft);
+}
+
+.item::before {
+    content: '';
+    position: absolute;
+    left: -0.5rem;
+    top: clamp(1.6rem, 3vw, 2.2rem);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    opacity: 0;
+    transform: translateY(0.55rem);
+    transition: opacity 0.3s ease;
+}
+
+.item:hover {
+    padding-left: 1.4rem;
+}
+
+.item:hover::before {
+    opacity: 1;
+}
+
+.head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.6rem 1rem;
+}
+
+.titleRow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.company {
+    font-size: clamp(1.3rem, 3vw, 1.9rem);
+    font-weight: 600;
+}
+
+.badge {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    border: 1px solid color-mix(in oklab, var(--accent) 45%, transparent);
+    border-radius: 999px;
+    padding: 0.2rem 0.6rem;
+}
+
+.period {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    color: var(--fg-mut);
+    white-space: nowrap;
+}
+
+.role {
+    font-size: 1rem;
+    color: var(--accent-3);
+    font-family: var(--font-mono);
+}
+
+.points {
+    margin: 0.7rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+    max-width: 70ch;
+}
+
+.points li {
+    position: relative;
+    padding-left: 1.4rem;
+    color: var(--fg-dim);
+    line-height: 1.6;
+}
+
+.points li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    opacity: 0.7;
+}
