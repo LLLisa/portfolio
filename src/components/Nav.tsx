@@ -11,6 +11,7 @@ const sections = [
 
 export default function Nav() {
     const [scrolled, setScrolled] = useState(false);
+    const [open, setOpen] = useState(false);
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 24);
@@ -19,8 +20,21 @@ export default function Nav() {
         return () => window.removeEventListener('scroll', onScroll);
     }, []);
 
+    // Lock body scroll and close on Escape while the mobile menu is open.
+    useEffect(() => {
+        if (!open) return;
+        const prev = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setOpen(false);
+        window.addEventListener('keydown', onKey);
+        return () => {
+            document.body.style.overflow = prev;
+            window.removeEventListener('keydown', onKey);
+        };
+    }, [open]);
+
     return (
-        <header className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
+        <header className={`${styles.nav} ${scrolled || open ? styles.scrolled : ''}`}>
             <div className={styles.inner}>
                 <a href="#top" className={styles.brand} aria-label="Lisa Anne Knox — home">
                     <span className={styles.mark}>LK</span>
@@ -43,6 +57,43 @@ export default function Nav() {
                 >
                     GitHub ↗
                 </a>
+
+                <button
+                    type="button"
+                    className={`${styles.burger} ${open ? styles.burgerOpen : ''}`}
+                    aria-label={open ? 'Close menu' : 'Open menu'}
+                    aria-expanded={open}
+                    aria-controls="mobile-menu"
+                    onClick={() => setOpen((v) => !v)}
+                >
+                    <span />
+                    <span />
+                </button>
+            </div>
+
+            <div
+                id="mobile-menu"
+                className={`${styles.mobile} ${open ? styles.mobileOpen : ''}`}
+                hidden={!open}
+            >
+                <nav aria-label="Mobile">
+                    {sections.map((s) => (
+                        <a key={s.id} href={`#${s.id}`} onClick={() => setOpen(false)}>
+                            {s.label}
+                        </a>
+                    ))}
+                    <a
+                        href={links.resume}
+                        target="_blank"
+                        rel="noreferrer"
+                        onClick={() => setOpen(false)}
+                    >
+                        Résumé ↓
+                    </a>
+                    <a href={links.github} target="_blank" rel="noreferrer">
+                        GitHub ↗
+                    </a>
+                </nav>
             </div>
         </header>
     );

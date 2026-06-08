@@ -99,6 +99,76 @@
     color: #0a0a0a;
 }
 
+/* Hamburger — hidden on desktop, shown on mobile */
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 2.4rem;
+    height: 2.4rem;
+    padding: 0;
+    background: none;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+.burger span {
+    display: block;
+    width: 1.1rem;
+    height: 1.6px;
+    margin: 0 auto;
+    background: var(--fg);
+    transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.burgerOpen span:first-child {
+    transform: translateY(3.3px) rotate(45deg);
+}
+
+.burgerOpen span:last-child {
+    transform: translateY(-3.3px) rotate(-45deg);
+}
+
+/* Mobile dropdown panel */
+.mobile {
+    overflow: hidden;
+    max-height: 0;
+    border-top: 1px solid transparent;
+    background: rgba(8, 8, 10, 0.96);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: max-height 0.3s ease, border-color 0.3s ease;
+}
+
+.mobileOpen {
+    max-height: 80vh;
+    border-top-color: var(--line-soft);
+}
+
+.mobile nav {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem var(--pad) 1.4rem;
+}
+
+.mobile a {
+    padding: 0.95rem 0;
+    font-size: 1.05rem;
+    color: var(--fg-dim);
+    border-bottom: 1px solid var(--line-soft);
+    transition: color 0.2s ease;
+}
+
+.mobile a:last-child {
+    border-bottom: none;
+}
+
+.mobile a:hover {
+    color: var(--accent);
+}
+
 @media (max-width: 720px) {
     .brandName {
         display: none;
@@ -109,8 +179,21 @@
     }
 }
 
-@media (max-width: 520px) {
-    .links {
+@media (max-width: 640px) {
+    .links,
+    .cta {
+        display: none;
+    }
+    .burger {
+        display: flex;
+    }
+    .brandName {
+        display: inline;
+    }
+}
+
+@media (max-width: 380px) {
+    .brandName {
         display: none;
     }
 }

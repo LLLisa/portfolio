@@ -6,6 +6,13 @@ export default function About() {
         <section className="section" id="about">
             <div className={styles.layout}>
                 <div className={styles.lead}>
+                    <div className={`${styles.avatar} reveal`} aria-hidden={!profile.photo}>
+                        {profile.photo ? (
+                            <img src={profile.photo} alt={profile.name} />
+                        ) : (
+                            <span>LK</span>
+                        )}
+                    </div>
                     <p className="eyebrow reveal">About</p>
                     <h2 className={`section-title ${styles.title} reveal`} data-reveal-delay="60">
                         Engineering that puts people first — and ships.

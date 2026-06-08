@@ -1,9 +1,14 @@
+export const siteUrl = 'https://www.lisaaknox.com';
+
 export const profile = {
     name: 'Lisa Anne Knox',
     role: 'Full-Stack Engineer',
     location: 'New York, NY',
     email: 'lisaknox83@gmail.com',
     phone: '646.858.5409',
+    // Drop a square photo at public/headshot.jpg and set this to '/headshot.jpg'
+    // to replace the monogram avatar with a real headshot.
+    photo: '',
     tagline:
         'I build user-focused interfaces, fast and reliable systems, and the AI / agentic tooling that ties them together.',
     intro: [
@@ -17,6 +22,7 @@ export const links = {
     linkedin: 'https://www.linkedin.com/in/lisa-a-knox',
     npm: 'https://www.npmjs.com/~lisaknox',
     email: 'mailto:lisaknox83@gmail.com',
+    resume: '/lisa-anne-knox-resume.pdf',
 };
 
 export const stats = [
@@ -90,7 +96,7 @@ export const projects: Project[] = [
     {
         name: 'Arvados',
         blurb:
-            'Open-source platform for managing, processing, and sharing genomic and other large-scale scientific data, maintained by Curii. I lead UI and testing overhauls and build new features to meet customer needs.',
+            'Open-source platform for managing, processing, and sharing petabyte-scale genomic and biomedical data, maintained by Curii. I lead front-end and test-suite overhauls — modernizing the React/Redux UI and shipping new features driven by direct customer feedback.',
         tags: ['React', 'TypeScript', 'Redux', 'Open Source'],
         href: 'https://arvados.org',
         repo: 'https://github.com/arvados/arvados',

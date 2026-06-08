@@ -35,6 +35,14 @@ export default function Hero() {
                     <a className={styles.ghost} href={links.email}>
                         Get in touch
                     </a>
+                    <a
+                        className={styles.ghost}
+                        href={links.resume}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        Résumé ↓
+                    </a>
                 </div>
 
                 <div className={`${styles.socials} reveal`} data-reveal-delay="360">

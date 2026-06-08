@@ -31,6 +31,9 @@ export default function Contact() {
                     <a href={links.npm} target="_blank" rel="noreferrer">
                         npm ↗
                     </a>
+                    <a href={links.resume} target="_blank" rel="noreferrer">
+                        Résumé ↓
+                    </a>
                 </div>
             </div>
         </section>
